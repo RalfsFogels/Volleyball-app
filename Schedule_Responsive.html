@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volleyball Tournament - Schedule</title>
+
+<style>
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  padding: 16px;
+  background: linear-gradient(135deg, #dbeeff, #f7fbff);
+  color: #1c1c1e;
+  margin: 0;
+}
+
+/* 🏐 ANIMATED BALLS - ADJUSTED FOR MOBILE */
+.ball-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 40px;
+  height: 50px; 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ball-left { left: 15px; }
+.ball-right { right: 15px; }
+
+@media (min-width: 768px) {
+  .ball-left { left: calc(50% - 240px); }
+  .ball-right { right: calc(50% - 240px); }
+}
+
+.bouncer { animation: bounce 1.5s ease-in-out infinite; }
+.spinning-ball { display: block; font-size: 24px; line-height: 1; animation: spin 4s linear infinite; }
+.ball-shadow {
+  width: 18px; height: 3px; background: rgba(0, 0, 0, 0.15);
+  border-radius: 50%; filter: blur(2px); margin-top: 2px;
+  animation: shadow-react 1.5s ease-in-out infinite;
+}
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+@keyframes shadow-react { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(0.4); opacity: 0.2; } }
+
+/* 🧊 GLASS CONTAINER FOR MAIN TITLE */
+.header-container {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.08);
+  position: relative; 
+  overflow: hidden;
+}
+
+.event-subtitle {
+  display: block; font-size: 12px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 2px;
+  color: #007aff; margin-top: 8px; opacity: 0.8;
+}
+
+h1 { font-weight: 700; margin: 0; line-height: 1.2; font-size: 24px; }
+h2 { font-weight: 600; text-align: center; margin-top: 25px; margin-bottom: 15px; font-size: 20px; }
+
+@media (min-width: 768px) {
+  h1 { font-size: 32px; line-height: 60px; }
+  .spinning-ball { font-size: 32px; }
+}
+
+/* 🧊 GLASS TABLE - RESPONSIVE */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 22px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+table {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  background: rgba(255, 255, 255, 0.55); backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px); border: 1px solid rgba(0,0,0,0.08);
+}
+
+th {
+  background: rgba(255,255,255,0.65); font-weight: 600; font-size: 13px; padding: 10px;
+  border-right: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.08);
+  white-space: nowrap;
+}
+
+td {
+  padding: 10px; text-align: center; font-size: 13px;
+  border-right: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06);
+  min-width: 45px;
+}
+</style>
+</head>
+<body>
+
+<div class="header-container">
+  <span class="ball-container ball-left"><span class="bouncer"><span class="spinning-ball">🏐</span></span><span class="ball-shadow"></span></span> 
+  <h1>Volleyball Tournament</h1>
+  <span class="ball-container ball-right"><span class="bouncer"><span class="spinning-ball">🏐</span></span><span class="ball-shadow"></span></span>
+  <span class="event-subtitle">Arctic Tribe Event</span>
+</div>
+
+<h2>📅 Match Schedule</h2>
+<div class="table-wrapper">
+<table>
+<tr><th>Slot</th><th>Time</th><th>Court 1</th><th>Court 2</th></tr>
+<tr><td>1</td><td>18:00–18:09</td><td>A vs B</td><td>C vs D</td></tr>
+<tr><td>2</td><td>18:09–18:18</td><td>E vs F</td><td>A vs C</td></tr>
+<tr><td>3</td><td>18:18–18:27</td><td>B vs C</td><td>D vs F</td></tr>
+<tr><td>4</td><td>18:27–18:36</td><td>F vs A</td><td>C vs E</td></tr>
+<tr><td>5</td><td>18:36–18:45</td><td>D vs B</td><td>A vs E</td></tr>
+<tr><td>6</td><td>18:45–18:54</td><td>B vs F</td><td>D vs E</td></tr>
+<tr><td>7</td><td>18:54–19:03</td><td>A vs D</td><td>B vs E</td></tr>
+<tr><td>8</td><td>19:03–19:12</td><td>C vs F</td><td>—</td></tr>
+</table>
+</div>
+
+</body>
+</html>
